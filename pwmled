@@ -1,0 +1,20 @@
+import board
+import analogio as aio
+import time
+led  pwmio.PWMOut(board.D5, frequency = 50000, duty_cycle 0)
+percent_on = 25
+n = (value - min)/(max - min +1)
+
+
+pot = aio.AnalogIn(board.A1)
+minimum = 128
+maximum = 65535
+n = (pot.value - minimum)/(maximum - minimum + 1)
+
+while True:
+    print(pot.value)
+    time.sleep(0.05)
+    led.duty_circle = int(65535 * percent_on / 100)
+    time.sleep(0.1)
+    
+
