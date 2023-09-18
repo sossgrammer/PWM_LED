@@ -11,6 +11,12 @@ off = [0,0,0]
 color_rgb = [color[0],color[1],color[2]]
 np.fill(color_rgb)
 
+"""
+function: fade_in
+description: function will make lights fade in from being completely off to its maximum value
+parameters: color(list), delay(float)
+return value: prints color values as it updates
+"""
 def fade_in(color, delay = 0.01):
     red_fade = color[0]/256.0
     green_fade = color[1]/256.0
@@ -23,7 +29,13 @@ def fade_in(color, delay = 0.01):
         np.show()
         print(i, color,red_fade*i,green_fade*i,color2_fade*i)
         time.sleep(0.01)
-        
+
+"""
+function: fade_out
+description: function will make lights fade out from being at its maximum value to completely off
+parameters: color(list), delay(float)
+return value: prints color values as it updates
+"""
 def fade_out(color, delay = 0.01):
     red_fade = color[0]/256.0
     green_fade = color[1]/256.0
@@ -36,7 +48,13 @@ def fade_out(color, delay = 0.01):
         np.show()
         print(i, color,red_fade*i,green_fade*i,color2_fade*i)
         time.sleep(delay)
-        
+
+"""
+function: sparkle
+description: function will make lights sopradically flash at random places on neopixel LED strip
+parameters: sprk_color(list), bckg_color(list), delay(float), sprk_num(int)
+return value: n/a
+"""
 def sparkle(sprk_color, bckg_color = color, delay = 0.01, sprk_num = 10):
     for i in range(100):
         np.fill(color)
@@ -47,6 +65,12 @@ def sparkle(sprk_color, bckg_color = color, delay = 0.01, sprk_num = 10):
         np[rand] = bckg_color
         np.show()
 
+"""
+function: chase
+description: function will create illusion of groups of lights "chasing" or following each other
+parameters: parameters: color(list), delay(float)
+return type: backgroud and foreground colors printed on console
+"""
 def chase(color = off, delay = 0.005):
     for i in range(30):
         np.show()
