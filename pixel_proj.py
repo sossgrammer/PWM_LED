@@ -5,8 +5,8 @@ import random
 
 np = neopixel.NeoPixel(board.D2, 30, auto_write = False, brightness=0.5)
 
-color = [255,255,0]
-color2 = [255,0,255]
+color = [127,176,171]
+color2 = [100,26,161]
 off = [0,0,0]
 color_rgb = [color[0],color[1],color[2]]
 np.fill(color_rgb)
