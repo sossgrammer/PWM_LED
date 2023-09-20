@@ -57,7 +57,7 @@ return value: n/a
 """
 def sparkle(sprk_color, bckg_color = color, delay = 0.01, sprk_num = 10):
     for i in range(100):
-        np.fill(color)
+        np.fill(off)
         for j in range(sprk_num):
             rand = random.randint(0, 29)
             np[rand] = sprk_color
