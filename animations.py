@@ -50,5 +50,20 @@ animations = AnimationSequence(
     auto_clear=True,
 )
 
+rainbow = Rainbow(pixels, speed=0.01, period=2)
+rainbow_chase = RainbowChase(pixels, speed=0.1, size=5, spacing=3)
+rainbow_comet = RainbowComet(pixels, speed=0.025, tail_length=7, bounce=True)
+rainbow_sparkle = RainbowSparkle(pixels, speed=0.05, num_sparkles=15)
+
+
+animations2 = AnimationSequence(
+    rainbow,
+    rainbow_chase,
+    rainbow_comet,
+    rainbow_sparkle,
+    advance_interval=5,
+    auto_clear=True,
+)
+
 while True:
     animations.animate()
