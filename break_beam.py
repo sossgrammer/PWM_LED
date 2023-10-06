@@ -38,6 +38,9 @@ break_beam = digitalio.DigitalInOut(board.D3)
 break_beam.direction = digitalio.Direction.INPUT
 break_beam.pull = digitalio.Pull.UP
 
+"""
+sonar = adafruit_hcsr04.HCSR04(trigger_pin=board.D3, echo_pin=board.D4)
+"""
 
 colorcycle = ColorCycle(pixels, speed=0.5, colors=[PURPLE,GREEN,ORANGE])
 chase = Chase(pixels, speed=0.1, color=GREEN, size=3, spacing=6)
@@ -75,3 +78,10 @@ while True:
         animations.animate()
     if break_beam.value:
             animations2.animate()
+    """
+    try:
+        print((sonar.distance,))
+    except RuntimeError:
+        print("Retrying!")
+    time.sleep(0.1)
+    """
